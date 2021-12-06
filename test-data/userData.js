@@ -27,7 +27,7 @@ const users = [
 			{ name: "2 week", img_url: "jhajsbdjd.png" },
 		],
 		streak: { currentStreak: 1, highestStreak: 2 },
-		plants = [	{ name: "brussels sprouts" },
+		plants = [	{ name: "brussels sprouts", category : "vegetables" },
 		{ name: "pumpkin seeds" },
 		{ name: "peas" },
 		{ name: "squash" },
@@ -40,6 +40,7 @@ const users = [
 		{ name: "carrot" },]
 	},
 ];
+
 
 
 module.exports = users;

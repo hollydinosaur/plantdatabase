@@ -160,7 +160,7 @@ MongoClient.connect(url, function (err, db) {
 		{ name: "winter melon" },
 		{ name: "yams" },
 	];
-	dbo.collection("fruit").insertMany(vegetables, function (err, res) {
+	dbo.collection("vegetables").insertMany(vegetables, function (err, res) {
 		if (err) throw err;
 		console.log("Number of documents inserted: " + res.insertedCount);
 		db.close();

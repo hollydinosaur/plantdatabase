@@ -6,3 +6,7 @@ const badges = [
 	{ name: "5 seeds", img_url: "nsnfhs.jpg" },
 	{ name: "10 vegetables", img_url: "9484.jpg" },
 ];
+
+//streak
+//different plant badges (e.g. 30 diff plants)
+//different types of plant  (e.g. 10 seeds)

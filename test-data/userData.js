@@ -2,7 +2,7 @@ const users = [
 	{
 		username: "georgia123",
 		name: "georgia",
-		currentWeek: [{ name: "banana" }, { name: "peas" }],
+		currentWeek: [{ name: "banana", category : "fruit" }, { name: "peas", category : "vegetable" }],
 		badges: [{ name: "1 week", img_url: "aighdfjagdha.jpg" }],
 		streak: { currentStreak: 1, highestStreak: 1 },
 	},
@@ -10,8 +10,8 @@ const users = [
 		username: "holly34",
 		name: "holly",
 		currentWeek: [
-			{ name: "brussels sprouts" },
-			{ name: "pumpkin seeds" },
+			{ name: "brussels sprouts", category : "vegetable" },
+			{ name: "pumpkin seeds", category : "seed" },
 			{ name: "peas" },
 			{ name: "squash" },
 			{ name: "quinoa" },
@@ -40,5 +40,6 @@ const users = [
 		{ name: "carrot" },]
 	},
 ];
+
 
 module.exports = users;

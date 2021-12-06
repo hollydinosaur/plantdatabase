@@ -219,8 +219,6 @@ const seeds = [
   { name: "milk thistle seeds", category: "seed" },
   { name: "mustard seeds", category: "seed" },
   { name: "mixed seeds", category: "seed" },
-<<<<<<< HEAD
-=======
 ];
 
 const fruits = [
@@ -274,7 +272,6 @@ const fruits = [
   { name: "satsuma", category: "fruit" },
   { name: "tangerine", category: "fruit" },
   { name: "watermelon", category: "fruit" },
->>>>>>> 9d38eb7d711186df3d5ee0a5fc8ed6531dceb4ba
 ];
 
 const herbsAndSpices = [
@@ -326,4 +323,4 @@ const herbsAndSpices = [
   { name: "yarrow", category: "herbs-and-spices" },
 ];
 
-module.exports = { grains, vegetables, seeds, nuts };
+module.exports = { grains, vegetables, seeds, nuts, herbsAndSpices, fruits };

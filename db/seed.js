@@ -1,5 +1,5 @@
 const MongoClient = require("mongodb").MongoClient;
-const url = "mongodb://localhost:27017/mydb";
+const url = "mongodb://localhost:27017/plantAppTest";
 const {
 	vegetables,
 	grains,
@@ -17,27 +17,22 @@ MongoClient.connect(url)
 		return dbo;
 	})
 	.then((dbo) => {
-		// dbo.dropCollection("grains");
 		dbo.createCollection("grains");
 		return dbo;
 	})
 	.then((dbo) => {
-		// dbo.dropCollection("nuts");
 		dbo.createCollection("nuts");
 		return dbo;
 	})
 	.then((dbo) => {
-		// dbo.dropCollection("seeds");
 		dbo.createCollection("seeds");
 		return dbo;
 	})
 	.then((dbo) => {
-		// 	dbo.dropCollection("herbsAndSpices");
 		dbo.createCollection("herbsAndSpices");
 		return dbo;
 	})
 	.then((dbo) => {
-		// dbo.dropCollection("fruits");
 		dbo.createCollection("fruits");
 		return dbo;
 	})
@@ -63,7 +58,6 @@ MongoClient.connect(url)
 	})
 	.then((dbo) => {
 		dbo.collection("fruits").insertMany(fruits);
-		return dbo;
 	})
 	.catch((err) => {
 		console.log(err);

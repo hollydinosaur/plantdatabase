@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "lint": "eslint"
+    "lint": "eslint",
+    "setup-dbs": "node ./db/setupDbs.js"
   },
   "dependencies": {
     "mocha": "^9.1.3",

@@ -11,39 +11,60 @@ const {
 
 MongoClient.connect(url)
 	.then((database) => {
-		const dbo = database.db("mydb");
-		return dbo.createCollection("vegetables");
+		const dbo = database.db("plantApp_test");
+		dbo.dropDatabase();
+		dbo.createCollection("vegetables");
+		return dbo;
 	})
-	.then(() => {
-		return dbo.createCollection("grains");
+	.then((dbo) => {
+		// dbo.dropCollection("grains");
+		dbo.createCollection("grains");
+		return dbo;
 	})
-	.then(() => {
-		return dbo.createCollection("nuts");
+	.then((dbo) => {
+		// dbo.dropCollection("nuts");
+		dbo.createCollection("nuts");
+		return dbo;
 	})
-	.then(() => {
-		return dbo.createCollection("seeds");
+	.then((dbo) => {
+		// dbo.dropCollection("seeds");
+		dbo.createCollection("seeds");
+		return dbo;
 	})
-	.then(() => {
-		return dbo.createCollection("herbsAndSpices");
+	.then((dbo) => {
+		// 	dbo.dropCollection("herbsAndSpices");
+		dbo.createCollection("herbsAndSpices");
+		return dbo;
 	})
-	.then(() => {
-		return dbo.createCollection("fruits");
+	.then((dbo) => {
+		// dbo.dropCollection("fruits");
+		dbo.createCollection("fruits");
+		return dbo;
 	})
-	.then(() => {
-		return dbo.collection("vegetables").insertMany(vegetables);
+	.then((dbo) => {
+		dbo.collection("vegetables").insertMany(vegetables);
+		return dbo;
 	})
-	.then(() => {
-		return dbo.collection("grains").insertMany(grains);
+	.then((dbo) => {
+		dbo.collection("grains").insertMany(grains);
+		return dbo;
 	})
-	.then(() => {
-		return dbo.collection("nuts").insertMany(nuts);
+	.then((dbo) => {
+		dbo.collection("nuts").insertMany(nuts);
+		return dbo;
 	})
-	.then(() => {
-		return dbo.collection("seeds").insertMany(seeds);
+	.then((dbo) => {
+		dbo.collection("seeds").insertMany(seeds);
+		return dbo;
 	})
-	.then(() => {
-		return dbo.collection("herbsAndSpices").insertMany(herbsAndSpices);
+	.then((dbo) => {
+		dbo.collection("herbsAndSpices").insertMany(herbsAndSpices);
+		return dbo;
 	})
-	.then(() => {
-		return dbo.collection("fruits").insertMany(fruits);
+	.then((dbo) => {
+		dbo.collection("fruits").insertMany(fruits);
+		return dbo;
+	})
+	.catch((err) => {
+		console.log(err);
 	});

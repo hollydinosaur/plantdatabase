@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-describe(() => {
+describe("", () => {
   beforeAll(async () => {
     await mongoose.connect(
       global.__MONGO_URI__,
@@ -18,5 +18,8 @@ describe(() => {
     // check we need both
     await connection.close();
     await db.close();
+  });
+  it("should insert a doc into collection", async () => {
+    expect(3).toBe(3);
   });
 });

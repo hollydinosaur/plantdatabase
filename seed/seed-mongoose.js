@@ -11,7 +11,8 @@ async function main(
   nutsArr,
   herbsAndSpicesArr,
   fruitsArr,
-  usersArr
+  usersArr,
+  badgesArr
 ) {
   await mongoose.connect("mongodb://localhost:27017/plantMongooseTest");
   await mongoose.connection.db.dropDatabase();
@@ -50,6 +51,15 @@ async function main(
 
   const User = mongoose.models["User"] || mongoose.model("User", userSchema);
   await User.create(usersArr);
+
+  const badgeSchema = new mongoose.Schema({
+    name: String,
+    img_url: String,
+  });
+
+  const Badge =
+    mongoose.models["Badge"] || mongoose.model("Badge", badgeSchema);
+  await Badge.create(badgesArr);
 
   mongoose.connection.close();
 }

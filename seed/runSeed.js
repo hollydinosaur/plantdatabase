@@ -10,6 +10,8 @@ const {
 
 const usersArr = require("../db/test-data/userData");
 
+const badgesArr = require("../db/test-data/badge");
+
 const runSeed = () => {
   return main(
     vegetablesArr,
@@ -18,7 +20,8 @@ const runSeed = () => {
     nutsArr,
     herbsAndSpicesArr,
     fruitsArr,
-    usersArr
+    usersArr,
+    badgesArr
   );
 };
 

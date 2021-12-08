@@ -6,11 +6,11 @@ const {
   nutsArr,
   herbsAndSpicesArr,
   fruitsArr,
-} = require("../db/test-data/plantData");
+} = require("../test-data/plantData");
 
-const usersArr = require("../db/test-data/userData");
+const usersArr = require("../test-data/userData");
 
-const badgesArr = require("../db/test-data/badge");
+const badgesArr = require("../test-data/badge");
 
 const runSeed = () => {
   return main(

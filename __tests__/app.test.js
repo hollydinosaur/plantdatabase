@@ -1,25 +1,43 @@
 const mongoose = require("mongoose");
+const main = require("../db/seed/seed-mongoose");
+const testData = require("../db/test-data/index");
+const { plantData, userData, badgeData } = testData;
+const {
+	vegetablesArr,
+	grainsArr,
+	seedsArr,
+	nutsArr,
+	herbsAndSpicesArr,
+	fruitsArr,
+} = plantData;
+const { usersArr } = userData;
+const { badgesArr } = badgeData;
+const database = require("../db/connection");
 
 describe("", () => {
-  beforeAll(async () => {
-    await mongoose.connect(
-      global.__MONGO_URI__,
-      { useNewUrlParser: true, useCreateIndex: true },
-      (err) => {
-        if (err) {
-          console.error(err);
-          process.exit(1);
-        }
-      }
-    );
-  });
+	let connection;
 
-  afterAll(async () => {
-    // check we need both
-    await connection.close();
-    await db.close();
-  });
-  it("should insert a doc into collection", async () => {
-    expect(3).toBe(3);
-  });
+	beforeAll(async () => {
+		await main(
+			vegetablesArr,
+			grainsArr,
+			seedsArr,
+			nutsArr,
+			herbsAndSpicesArr,
+			fruitsArr,
+			usersArr,
+			badgesArr
+		);
+		connection = await mongoose.connect(database.mongodb_uri, {
+			useNewUrlParser: true,
+		});
+	});
+	it("get request", async () => {
+		const fruit = database.collection("fruit").find({ name: "banana" });
+		console.log(fruit);
+		expect(fruit.name).toBe("banana");
+	});
+	afterEach(async () => {
+		await mongoose.connection.close();
+	});
 });

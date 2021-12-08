@@ -1,28 +1,27 @@
 const main = require("./seed-mongoose");
+const { data } = require("../test-data/index");
+const { plantData, userData, badgeData } = data;
 const {
-  vegetablesArr,
-  grainsArr,
-  seedsArr,
-  nutsArr,
-  herbsAndSpicesArr,
-  fruitsArr,
-} = require("../test-data/plantData");
-
-const usersArr = require("../test-data/userData");
-
-const badgesArr = require("../test-data/badge");
-
+	vegetablesArr,
+	grainsArr,
+	seedsArr,
+	nutsArr,
+	herbsAndSpicesArr,
+	fruitsArr,
+} = plantData;
+const { usersArr } = userData;
+const { badgesArr } = badgeData;
 const runSeed = () => {
-  return main(
-    vegetablesArr,
-    grainsArr,
-    seedsArr,
-    nutsArr,
-    herbsAndSpicesArr,
-    fruitsArr,
-    usersArr,
-    badgesArr
-  );
+	return main(
+		vegetablesArr,
+		grainsArr,
+		seedsArr,
+		nutsArr,
+		herbsAndSpicesArr,
+		fruitsArr,
+		usersArr,
+		badgesArr
+	);
 };
 
 runSeed();

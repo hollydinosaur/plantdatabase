@@ -5,6 +5,7 @@ const app = express();
 const port = 3000;
 
 const db = mongoose.connection;
+
 db.on("error", () => {
 	console.error("Error Connection to MongoDB");
 });
